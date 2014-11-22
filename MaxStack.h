@@ -22,6 +22,12 @@ public:
     top = new Node<T>(v);
   }
 
+  virtual ~Stack() {
+    while(!empty()) {
+      pop();
+    }
+  }
+
   void push(T v) {
     Node<T>* t = new Node<T>(v);
     t->next = top;
