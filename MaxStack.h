@@ -23,7 +23,7 @@ public:
   }
 
   virtual ~Stack() {
-    while(!empty()) {
+    while(!isEmpty()) {
       pop();
     }
   }
@@ -53,7 +53,7 @@ public:
     return top->value;
   }
 
-  bool empty() {
+  bool isEmpty() {
     if (top == nullptr)
       return true;
     else
@@ -74,7 +74,7 @@ public:
 
   void push(T v) {
   Stack<T>::push(v);
-  if (max_stack.empty() || v >= max_stack.peek())
+  if (max_stack.isEmpty() || v >= max_stack.peek())
     max_stack.push(v);
   }
 
@@ -88,7 +88,7 @@ public:
   }
 
   T getMax() {
-    if (Stack<T>::empty())
+    if (Stack<T>::isEmpty())
       throw std::runtime_error("Stack is empty. Cannot return max.");
     return max_stack.peek();
   }

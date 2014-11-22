@@ -17,10 +17,10 @@ int main() {
   s.push(5);
   cout << "Pushed " << s.peek() <<  " (max is " << s.getMax() << ")" << endl << endl;
 
-  while (!s.empty()) { 
+  while (!s.isEmpty()) { 
     cout << "Popped " << s.pop();
    
-    if (!s.empty())
+    if (!s.isEmpty())
       cout << " (max is " << s.getMax() << ")" << endl;
   }
   cout << endl;
